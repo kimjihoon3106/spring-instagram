@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            height: 60vh;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <main id="login">
+        <div class="login__column" id="for__join">
+            <div class="login__box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2560px-Instagram_logo.svg.png" width="150" height="80" /><br>
+                <span class="login__divider2"> 친구들의 사진과 동영상을 보려면 <br>가입하세요. </span>
+                <form action="/join" method="post">
+                    <div class="group">
+                        <input type = "text" name = "username" placeholder="Username"/> <br />
+                     <label>사용자 이름</label>
+                    </div>
+                    <div class="group">
+                        <input type="password" name="password" placeholder="Password"/> <br />
+                        <label>비밀번호</label>
+                    </div>
+                    <div class="group">
+                        <input type="email" name="email" placeholder="Email"/> <br />
+                        <label>이메일</label>
+                    </div>
+                    <button>회원가입</button>
+                </form>
+                <span class="login__divider2"> 가입하면 lnstagram의 약관, 데이터 <br>정책 및 쿠키 정책에 동의하게 됩니다. </span>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>
