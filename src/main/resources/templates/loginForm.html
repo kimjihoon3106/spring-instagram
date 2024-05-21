@@ -1,19 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>로그인 페이지</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 · instagram</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 78vh;
+            background-color: #fafafa;
+        }
+
+        .signin-container {
+            width: 100%;
+            max-width: 350px;
+            padding: 40px;
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            text-align: center;
+        }
+
+        .signin-container h1 {
+            font-family: 'Billabong', cursive;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .signin-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .signin-form input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            font-size: 14px;
+            background-color: #fafafa;
+        }
+
+        .signin-form input:focus {
+            outline: none;
+            border-color: #a8a8a8;
+        }
+
+        .signin-form button {
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #3897f0;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .signin-form button:hover {
+            background-color: #287ad6;
+        }
+
+        .info-text {
+            font-size: 12px;
+            color: #999;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+
+        .info-text a {
+            color: #3897f0;
+            text-decoration: none;
+        }
+
+        .info-text a:hover {
+            text-decoration: underline;
+        }
+
+        .login-link {
+            margin-top: 20px;
+        }
+
+        .login-link a {
+            color: #3897f0;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .signup-container {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-<h1>로그인 페이지</h1>
-<hr />
-<form action="/login" method="POST">
-    <input type = "text" name = "username" placeholder="Username"/> <br />
-    <input type = "password" name = "password" placeholder="Password"/> <br />
-    <button>로그인</button>
-</form>
-<form>
-    <a href="/joinForm">회원가입</a>
-</form>
+<div class="signin-container">
+    <h1>Instagram</h1>
+    <form class="signin-form" action="/login" method="post">
+        <input type="text" name="username" placeholder="사용자 이름" required>
+        <input type="password" name="password" placeholder="비밀번호" required>
+        <button>로그인</button>
+    </form>
+    <div class="login-link">
+        <p><a href="/joinForm">새 계정 만들기</a></p>
+    </div>
+</div>
 </body>
 </html>
