@@ -15,15 +15,16 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable();
         http.authorizeRequests()
+                .requestMatchers("/loginForm", "/joinForm").permitAll() // 메인화면 접근시 로그인 요청
                 .requestMatchers("/user/**").authenticated() // 로그인 한 사람들만
                 .requestMatchers("/manager/**").access("hasAnyRole('ROLE_MANAGER','ROLE_ADMIN')") // 로그인을 했지만 매니저나 어드민 권한
                 .requestMatchers("/admin/**").access("hasRole('ROLE_ADMIN')") // 로그인으르 했지만 어드민 권한
-                .anyRequest().permitAll() // 이외의 요청은 모든 사람에게 권한 허용
+                .anyRequest().authenticated() // 이외의 요청은 모든 사람에게 인증 필요
                 .and()
                 .formLogin()
                 .loginPage("/loginForm")
                 .loginProcessingUrl("/login") // login이라는 주소가 호출이 되면 시큐리티가 낚아채서 대신 로그인을 진행해줌
-                .defaultSuccessUrl("/")
+                .defaultSuccessUrl("/home",true)
         ;
 
         return http.build();
