@@ -4,10 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.security.access.annotation.Secured;
 
 import java.sql.Timestamp;
 
@@ -39,4 +38,22 @@ public class User {
         this.providerId = providerId;
         this.createData = createData;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName(String username) {
+        return username;
+    }
+
+    public void setName(String username) {
+        this.username = username;
+    }
+
+
 }
